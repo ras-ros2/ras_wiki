@@ -1,0 +1,170 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installation &mdash; ras_wiki  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=b3ba4146"></script>
+      <script src="_static/doctools.js?v=888ff710"></script>
+      <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Examples" href="example.html" />
+    <link rel="prev" title="RAS Wiki Documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            ras_wiki
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#clone-the-repository">1. Clone the Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ras-docker-interface-rdi">RAS Docker Interface (RDI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#source-the-environment-file">2. Source the Environment File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#check-available-commands">3. Check Available Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#directory-structure">Directory Structure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#apps-directory"><cite>apps</cite> Directory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#context-directory"><cite>context</cite> Directory</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#check-app-specific-commands">4. Check App-Specific Commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribution.html">Contributing</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ras_wiki</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Installation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/installation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h1>
+<p>RAS Docker is the main workspace where two applications, <strong>sim</strong> and <strong>real</strong>, can be worked with seamlessly. This document provides an overview of its setup and usage.</p>
+<section id="clone-the-repository">
+<h2>1. Clone the Repository<a class="headerlink" href="#clone-the-repository" title="Permalink to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/ras-ros2/ras_docker
+</pre></div>
+</div>
+</section>
+<section id="ras-docker-interface-rdi">
+<h2>RAS Docker Interface (RDI)<a class="headerlink" href="#ras-docker-interface-rdi" title="Permalink to this heading"></a></h2>
+<p>RAS Docker includes a command-line utility called <strong>RDI</strong> (RAS Docker Interface), implemented in <code class="docutils literal notranslate"><span class="pre">docker_interface.py</span></code> under the <code class="docutils literal notranslate"><span class="pre">scripts</span></code> directory.</p>
+</section>
+<section id="source-the-environment-file">
+<h2>2. Source the Environment File<a class="headerlink" href="#source-the-environment-file" title="Permalink to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>./ras_docker/env.sh
+</pre></div>
+</div>
+</section>
+<section id="check-available-commands">
+<h2>3. Check Available Commands<a class="headerlink" href="#check-available-commands" title="Permalink to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rdi<span class="w"> </span>-h
+</pre></div>
+</div>
+<p>To see the available RDI commands</p>
+</section>
+<section id="directory-structure">
+<h2>Directory Structure<a class="headerlink" href="#directory-structure" title="Permalink to this heading"></a></h2>
+<section id="apps-directory">
+<h3><cite>apps</cite> Directory<a class="headerlink" href="#apps-directory" title="Permalink to this heading"></a></h3>
+<p>The <cite>apps</cite> directory houses the two applications, <strong>sim</strong> and <strong>real</strong>, which are Docker containers built using the Docker images located in the <cite>context</cite> directory.</p>
+</section>
+<section id="context-directory">
+<h3><cite>context</cite> Directory<a class="headerlink" href="#context-directory" title="Permalink to this heading"></a></h3>
+<p>The <cite>context</cite> directory contains the Docker images used to build the applications:</p>
+<ol class="arabic simple">
+<li><p><strong>Dockerfile.base</strong>: Based on the <cite>humble-desktop-full</cite> image, it installs dependencies common to both applications (e.g., <cite>python3-pip</cite>).</p></li>
+<li><p><strong>Dockerfile.sim</strong>: Extends <cite>Dockerfile.base</cite> and adds dependencies specific to the <strong>sim</strong> application (e.g., <cite>ignition-fortress</cite>).</p></li>
+<li><p><strong>Dockerfile.real</strong>: Extends <cite>Dockerfile.base</cite> and adds dependencies specific to the <strong>real</strong> application.</p></li>
+</ol>
+</section>
+</section>
+<section id="check-app-specific-commands">
+<h2>4. Check App-Specific Commands<a class="headerlink" href="#check-app-specific-commands" title="Permalink to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rdi<span class="w"> </span>sim<span class="w"> </span>-h
+</pre></div>
+</div>
+<p>To see commands specific to an application (e.g., <cite>sim</cite>)</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="RAS Wiki Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="example.html" class="btn btn-neutral float-right" title="Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, RAS.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

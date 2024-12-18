@@ -1,0 +1,166 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Examples &mdash; ras_wiki  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=b3ba4146"></script>
+      <script src="_static/doctools.js?v=888ff710"></script>
+      <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Contributing" href="contribution.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            ras_wiki
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sim-examples">Sim Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#after-the-installation-of-ras-initialize-the-sim-application-by-running-the-following-command">1. After the installation of RAS, initialize the <strong>sim</strong> application by running the following command:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-the-ros-packages-for-the-sim-application-by-running-the-following-command">2. Build the ros packages for the <strong>sim</strong> application by running the following command:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#start-the-sim-application-by-running-the-following-command">3. Start the <strong>sim</strong> application by running the following command:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#to-start-the-experiment-open-the-following-url-in-your-browser">4. To start the experiment, open the following URL in your browser:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#real-examples">Real Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contribution.html">Contributing</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ras_wiki</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Examples</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/example.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h1>
+<p>RAS provides a set of examples to get started with the RAS. The examples are divided into two categories: <strong>real</strong> and <strong>sim</strong>.</p>
+<section id="sim-examples">
+<h2>Sim Examples<a class="headerlink" href="#sim-examples" title="Permalink to this heading"></a></h2>
+<p>The <strong>sim</strong> examples are designed to work with the Ignition Gazebo simulator. The examples are located in the <cite>ras_sim_lab</cite> directory under the <cite>apps</cite> folder.</p>
+<p>To get started with the examples, follow the steps below:</p>
+</section>
+<section id="after-the-installation-of-ras-initialize-the-sim-application-by-running-the-following-command">
+<h2>1. After the installation of RAS, initialize the <strong>sim</strong> application by running the following command:<a class="headerlink" href="#after-the-installation-of-ras-initialize-the-sim-application-by-running-the-following-command" title="Permalink to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rdi<span class="w"> </span>sim<span class="w"> </span>init
+</pre></div>
+</div>
+<img alt="RDI Sim Init" class="align-center" src="_images/rdi_sim_init.png" />
+<p><cite>rdi sim init</cite> will first pull application specific repository, then pull it’s dependencies, and after that, pull docker image</p>
+</section>
+<section id="build-the-ros-packages-for-the-sim-application-by-running-the-following-command">
+<h2>2. Build the ros packages for the <strong>sim</strong> application by running the following command:<a class="headerlink" href="#build-the-ros-packages-for-the-sim-application-by-running-the-following-command" title="Permalink to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rdi<span class="w"> </span>sim<span class="w"> </span>build
+</pre></div>
+</div>
+<img alt="RDI Sim Build" class="align-center" src="_images/rdi_sim_build.png" />
+<p>To build the docker image use <cite>–force</cite> argument with command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rdi<span class="w"> </span>sim<span class="w"> </span>build<span class="w"> </span>--force
+</pre></div>
+</div>
+</section>
+<section id="start-the-sim-application-by-running-the-following-command">
+<h2>3. Start the <strong>sim</strong> application by running the following command:<a class="headerlink" href="#start-the-sim-application-by-running-the-following-command" title="Permalink to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rdi<span class="w"> </span>sim<span class="w"> </span>run
+</pre></div>
+</div>
+<img alt="RDI Sim Run" class="align-center" src="_images/rdi_sim_run.png" />
+<p>It will start the Ignition Gazebo simulator, rviz, and other necessary components. You can now interact with the simulator.</p>
+<img alt="Ignition Rviz" class="align-center" src="_images/ignition_rviz.png" />
+</section>
+<section id="to-start-the-experiment-open-the-following-url-in-your-browser">
+<h2>4. To start the experiment, open the following URL in your browser:<a class="headerlink" href="#to-start-the-experiment-open-the-following-url-in-your-browser" title="Permalink to this heading"></a></h2>
+<blockquote>
+<div><p><a class="reference external" href="http://localhost:5173">localhost:5173</a></p>
+</div></blockquote>
+<p>Then enter <em>1</em> in the <strong>Experiment ID</strong> field and click <strong>LOAD EXPERIMENT</strong>. After that click <strong>START SIMULATION</strong> to start the experiment.</p>
+<img alt="RDI Experiment Browser" class="align-center" src="_images/rdi_experiment_browser.png" />
+<p>The robot arm will perform the motion in the simulation and trajectory will be displayed in the rviz.</p>
+</section>
+<section id="real-examples">
+<h2>Real Examples<a class="headerlink" href="#real-examples" title="Permalink to this heading"></a></h2>
+<p>The <strong>real</strong> examples are designed to work with the real robot. The examples are located in the <cite>ras_real_lab</cite> directory under the <cite>apps</cite> folder.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="contribution.html" class="btn btn-neutral float-right" title="Contributing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, RAS.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

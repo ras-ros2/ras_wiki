@@ -26,12 +26,12 @@ jobs:
       - name: Build Documentation
         run: |
           make html
-          # Create .nojekyll file to bypass GitHub Pages Jekyll processing
-          touch _build/html/.nojekyll
+          # Create .nojekyll file in the correct directory
+          touch build/html/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.GH_PAT }}
-          publish_dir: _build/html  # Your Sphinx build output directory
+          publish_dir: build/html  # Changed from _build/html to build/html
           force_orphan: true

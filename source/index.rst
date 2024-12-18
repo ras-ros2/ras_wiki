@@ -14,11 +14,11 @@ Installation
 :doc:`Installation <installation>`
     How to install RAS
 
-:doc:`Example <example>`
+:doc:`Examples <example>`
     Get started with the Examples
 
-:doc:`Contribution <contribution>`
-    Contribution Guidelines
+:doc:`Contributing <contribution>`
+    How to contribute to RAS
 
 
 .. toctree::

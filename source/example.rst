@@ -15,4 +15,4 @@ RAS provides a set of examples to get started with the RAS. The examples are div
    
    examples/sim_example
    examples/real_example
-   examples/action_example1
+   examples/action_examples

@@ -6,7 +6,7 @@ The **sim** examples are designed to work with the Ignition Gazebo simulator. Th
 To get started with the examples, follow the steps below:
 
 1. After the installation of RAS, initialize the **sim** application by running the following command:
--------------------------------------------------------------------------------------------------------
+
 .. code-block:: bash
 
     rdi sim init
@@ -18,7 +18,7 @@ To get started with the examples, follow the steps below:
 `rdi sim init` will first pull application specific repository, then pull it's dependencies, and after that, pull docker image
 
 2. Build the ros packages for the **sim** application by running the following command:
---------------------------------------------------------------------------------------------
+
 .. code-block:: bash
 
     rdi sim build
@@ -35,7 +35,7 @@ To build the docker image use `--force` argument with command:
 
 
 3. Start the **sim** application by running the following command:
-------------------------------------------------------------------
+
 .. code-block:: bash
 
     rdi sim run
@@ -52,7 +52,7 @@ It will start the Ignition Gazebo simulator, rviz, and other necessary component
 
 
 4. To start the experiment, open the following URL in your browser:
---------------------------------------------------------------------
+
 
     `localhost:5173 <http://localhost:5173>`_
 

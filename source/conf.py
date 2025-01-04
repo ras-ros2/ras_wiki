@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'ras_wiki'
-copyright = '2024, RAS'
+copyright = '2025, RAS'
 author = 'Sachin Kumar'
 
 # -- General configuration ---------------------------------------------------

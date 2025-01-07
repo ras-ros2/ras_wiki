@@ -43,7 +43,7 @@ Directory Structure
 
 `apps` Directory
 ~~~~~~~~~~~~~~~~
-The `apps` directory houses the two applications, **sim** and **real**, which are Docker containers built using the Docker images located in the `context` directory.
+The `apps` directory houses the two applications, **sim** and **real**, which are Docker containers built using the Docker images located in the `context` directory. **sim app** is used for developing and testing experiments in the sim environment, and **real app** is used for testing the experiments in the real environment with real robot.
 
 `context` Directory
 ~~~~~~~~~~~~~~~~~~~

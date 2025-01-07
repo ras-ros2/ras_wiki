@@ -29,7 +29,7 @@ To get started with the sim examples, follow the steps below:
 
 The above command will build the ros2 packages for the **sim** application in *apps/ras_sim_lab/ros2_ws* directory.
 
-If you need build the docker image, then use `--force` argument with command:
+(Optional) If you need build the docker image, then use `--force` argument with command:
 
 .. code-block:: bash
 
@@ -46,10 +46,10 @@ If you need build the docker image, then use `--force` argument with command:
     :alt: RDI Sim Run
     :align: center
 
-It will start the Gazebo simulator, Rviz2, and other necessary components for the application to work out-of-the-box. You can now interact with robot.
+It will start the Gazebo Sim with XArm Robot, Rviz2, and other necessary components for the application to work out-of-the-box. You can now interact with robot.
 
 .. image:: ../_static/assets/ignition_rviz.png
-    :alt: Ignition Rviz
+    :alt: Rviz
     :align: center
 
 
@@ -107,7 +107,25 @@ Remember the name of the file is the **Experiment ID**. Now, to run this experim
     :alt: RDI Experiment Browser
     :align: center
 
-The robot arm will perform the motion in the simulation and trajectory will be displayed in the rviz.
+Based on the experiment file, the behavior tree is generated to perform the actions defined in the yaml file. Then robot arm will perform the motion in the simulation.
+
+
+Let's consider these target actions:
+
+.. code-block:: yaml
+    targets:
+    - move2pose: out1
+    - move2pose: above1
+    - move2pose: in1
+    - gripper: true
+    - move2pose: above1
+    - move2pose: out2
+    - move2pose: above2
+    - move2pose: in2
+    - gripper: false
+
+First, the XArm robot will move to the *out1* pose, which is defined as x position of gripper of robot arm is 0.2 m w.r.t. base of the robot and z is 0.5 m and roll of gripper will be 3.14, then to the *above1* pose, where the robot moves to y -0.35 m and z 0.33 m, and then to the *in1* pose, where gripper reaches z 0.25. After that, the gripper will be closed. Then the robot will move to the *above1* pose based on the pose, then to the *out2* pose, then to the *above2* pose, and then to the *in2* pose. Finally, the gripper will be opened.
+
 
 Similarly, you can run other experiments which are predefined in the *configs/experiments* directory.
 If you want to create your own experiment then follow the instructions in the `Real Examples <examples/real_example>`_ section.

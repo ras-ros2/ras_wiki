@@ -6,6 +6,14 @@ RAS Docker is the main workspace where two applications, **sim** and **real**, c
 Steps to install RAS
 --------------------
 
+0. Prerequisites
+
+Install the following dependencies:
+
+- `Docker <https://docs.docker.com/engine/install/ubuntu/>`_
+
+- `Nvidia Cuda Toolkit <https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html>`_
+
 1. Clone the Repository
 
 .. code-block:: bash
@@ -35,7 +43,7 @@ Directory Structure
 
 `apps` Directory
 ~~~~~~~~~~~~~~~~
-The `apps` directory houses the two applications, **sim** and **real**, which are Docker containers built using the Docker images located in the `context` directory.
+The `apps` directory houses the two applications, **sim** and **real**, which are Docker containers built using the Docker images located in the `context` directory. **sim app** is used for developing and testing experiments in the sim environment, and **real app** is used for testing the experiments in the real environment with real robot.
 
 `context` Directory
 ~~~~~~~~~~~~~~~~~~~
@@ -47,7 +55,7 @@ The `context` directory contains the Docker images used to build the application
 
 3. **Dockerfile.real**: Extends `Dockerfile.base` and adds dependencies specific to the **real** application.
 
-4. Check App-Specific Commands
+4. To check App-Specific Commands
 
 .. code-block:: bash
 

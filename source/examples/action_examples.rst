@@ -1,16 +1,16 @@
 Action Examples
 ===============
 
-This example demonstrates how to create a simple action and use it with the RAS.
+This section demonstrates how to create a experiment yaml file using simple actions and use it with the RAS.
 
-The actions can be defined in the **config\experiments** folder inside the `ras_sim_lab` where you can create a .yaml file which can be used to define the actions for the robot to perform.
+In the **config/experiments** folder inside the `ras_sim_lab`, you can create a <your_experiment_name>.yaml file which can be used to define the actions for the robot to perform.
 
 Example 1
 ---------
 
-1. Create a new yaml file e.g. 5.yaml in the **config\experiments** folder inside the `ras_sim_lab`.
+1. Create a new yaml file e.g. 5.yaml in the **config/experiments** folder inside the `ras_sim_lab`.
 
-2. First define the poses for the robot. The poses are defined as a dictionary with the keys as the name of the pose and the values as the pose values. The pose values are defined as a dictionary with the keys as the x, y, z, roll, pitch and yaw values. See the example below and create a similar dictionary for the poses.:
+2. Now define the poses for the robot. The poses are defined as a dictionary with the keys as the name of the pose and the values as the pose values. The pose values are defined as a dictionary with the keys as the x, y, z, roll, pitch and yaw values. See the example below and create a similar dictionary for the poses.:
 
 .. code-block:: yaml
 
@@ -77,8 +77,8 @@ Then enter *5* in the **Experiment ID** field and click **LOAD EXPERIMENT**. Aft
 7. This will start the robot and it will perform the actions defined in the yaml file.
 
 
-Example 2
----------
+.. Example 2
+.. ---------
 
-Example 3
----------
+.. Example 3
+.. ---------

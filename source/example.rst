@@ -1,18 +1,17 @@
 Examples
 =========
 
-RAS provides a set of examples to get started with the RAS. The examples are divided into two categories: **real** and **sim**.
+RAS provides a set of examples to get started with it. The examples are as follows:
 
-:doc:`Sim Examples <examples/sim_example>`
-    The **sim** examples are designed to work with the Gazebo Sim simulator.
+:doc:`Quick Start <examples/quick_start>`
+    The **quick start** example to get started with RAS.
 
-:doc:`Real Examples <examples/real_example>`
-    The **real** examples are designed to work with the real robot.
+:doc:`Action Examples <examples/action_examples>`
+    The **action** example describe how you can create your own custom experiment to perform using RAS.
 
 
 .. toctree::
    :maxdepth: 2
    
-   examples/sim_example
-   examples/real_example
+   examples/quick_start
    examples/action_examples

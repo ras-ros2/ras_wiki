@@ -7,15 +7,17 @@ This is the quick start example to get started with the RAS. RAS is an open sour
 
 .. code-block:: bash
 
-    rdi sim init -i
+    rdi sim init
 
 .. image:: ../_static/assets/rdi_sim_init.png
     :alt: RDI Sim Init
     :align: center
 
-`rdi sim init -i` will first pull application specific repositories which are defined in the *repos/apps/ras_sim_lab.repos*, then pull it's dependencies, and after that, pull docker image for the **sim** application.
+`rdi sim init` will first pull application specific repositories which are defined in the *repos/apps/ras_sim_lab.repos*, then pull it's dependencies, and after that, pull docker image for the **sim** application.
 
--i argument is defined to pull the latest docker image and doesn't require if you want to use the existing docker image.
+.. note::
+
+    -i argument is defined to pull the latest docker image and doesn't require if you want to use the existing docker image.
 
 .. code-block:: bash
 
@@ -74,17 +76,19 @@ This will load the experiment file *0*.
 This will start the simulation, and you can see the robot arm performing the motion *pick and place* in the simulation.
 You should wait for the experiment to complete and then continue with the next steps.
 
-7. After the experiment is completed, now this is the time to run the experiment in the real robot. For that, you need to connect the real robot with the RAS. But for this quick start we will simulate another Gazebo Sim with robot arm to pretend it as real robot. Now the run following command to start the real robot simulation:
+7. After the experiment is completed, now this is the time to run the experiment in the robot. For that, you need to install and build the real app with the RAS. For this quick start, we will use robot simulation using another Gazebo Sim with robot arm. Now the run following command to start the robot simulation:
 
 .. code-block:: bash
 
-    rdi real init -i
+    rdi real init
 
     # output
 
 This will pull application specific repositories which are defined in the *repos/apps/ras_real_lab.repos*, then pull it's dependencies, and after that, pull docker image for the **real** application.
 
--i argument is defined to pull the latest docker image and doesn't require if you want to use the existing docker image.
+.. note::
+
+    -i argument is defined to pull the latest docker image and doesn't require if you want to use the existing docker image.
 
 
 8. Build the ros2 packages for the **real** application by running the following command:
@@ -111,7 +115,7 @@ The above command will build the ros2 packages for the **real** application in *
 
 .. code-block:: bash
 
-    rdi real run
+    rdi real run sim
 
     # output
 

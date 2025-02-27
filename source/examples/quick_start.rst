@@ -3,17 +3,17 @@ Quick Start
 
 This is the quick start example to get started with the RAS. RAS is an open source platform, which provides tools and functionality to control the robot. To quickly start with the experiment, you can follow this guide.
 
-1. After the installation of RAS, initialize the **sim** application by running the following command:
+1. After the installation of RAS, initialize the **server** application by running the following command:
 
 .. code-block:: bash
 
-    rdi sim init
+    ras server init
 
 .. image:: ../_static/assets/rdi_sim_init.png
-    :alt: RDI Sim Init
+    :alt: ras server Init
     :align: center
 
-`rdi sim init` will first pull application specific repositories which are defined in the *repos/apps/ras_sim_lab.repos*, then pull it's dependencies, and after that, pull docker image for the **sim** application.
+`ras server init` will first pull application specific repositories which are defined in the *repos/apps/ras_server_lab.repos*, then pull it's dependencies, and after that, pull docker image for the **server** application.
 
 .. note::
 
@@ -21,24 +21,24 @@ This is the quick start example to get started with the RAS. RAS is an open sour
 
 .. code-block:: bash
 
-    rdi sim build
+    ras server build
 
 .. image:: ../_static/assets/rdi_sim_build.png
-    :alt: RDI Sim Build
+    :alt: ras server Build
     :align: center
 
-The above command will build the ros2 packages for the **sim** application in *apps/ras_sim_lab/ros2_ws* directory.
+The above command will build the ros2 packages for the **server** application in *apps/ras_server_lab/ros2_ws* directory.
 
 (Optional) If you need build the docker image, then use `--force` argument with command:
 
-3. Start the **sim** app by running the following command:
+3. Start the **server** app by running the following command:
 
 .. code-block:: bash
 
-    rdi sim run
+    ras server run
 
 .. image:: ../_static/assets/rdi_sim_run.png
-    :alt: RDI Sim Run
+    :alt: ras server Run
     :align: center
 
 It will start the Gazebo Sim with XArm Robot, Rviz2, and other necessary components for the application to work out-of-the-box. You can now interact with robot.
@@ -100,40 +100,40 @@ You should wait for the experiment to complete and then continue with the next s
 
     First, the XArm robot will move to the *out1* pose, which is defined as x position of gripper of robot arm is 0.2 m w.r.t. base of the robot and z is 0.5 m and roll of gripper will be 3.14, then to the *above1* pose, where the robot moves to y -0.35 m and z 0.33 m, and then to the *in1* pose, where gripper reaches z 0.25. After that, the gripper will be closed. Then the robot will move to the *above1* pose based on the pose, then to the *out2* pose, then to the *above2* pose, and then to the *in2* pose. Finally, the gripper will be opened.
 
-7. After the experiment is completed, now this is the time to run the experiment in the robot. For that, you need to install and build the real app with the RAS. For this quick start, we will use robot simulation using another Gazebo Sim with robot arm. Now the run following command to start the robot simulation:
+7. After the experiment is completed, now this is the time to run the experiment in the robot. For that, you need to install and build the robot app with the RAS. For this quick start, we will use robot simulation using another Gazebo Sim with robot arm. Now the run following command to start the robot simulation:
 
 .. code-block:: bash
 
-    rdi real init
+    ras robot init
 
-This will pull application specific repositories which are defined in the *repos/apps/ras_real_lab.repos*, then pull it's dependencies, and after that, pull docker image for the **real** application.
+This will pull application specific repositories which are defined in the *repos/apps/ras_robot_lab.repos*, then pull it's dependencies, and after that, pull docker image for the **robot** application.
 
 .. note::
 
     -i argument is defined to pull the latest docker image and doesn't require if you want to use the existing docker image.
 
 
-8. Build the ros2 packages for the **real** application by running the following command:
+8. Build the ros2 packages for the **robot** application by running the following command:
 
 .. code-block:: bash
 
-    rdi real build
+    ras robot build
 
-The above command will build the ros2 packages for the **real** application in *apps/ras_real_lab/ros2_ws* directory.
+The above command will build the ros2 packages for the **robot** application in *apps/ras_robot_lab/ros2_ws* directory.
 
 
 (Optional) If you need to build the docker image, then use `--force` argument with command:
 
 .. code-block:: bash
 
-    rdi real build --force
+    ras robot build --force
 
 
-9. Start the **real** app by running the following command:
+9. Start the **robot** app by running the following command:
 
 .. code-block:: bash
 
-    rdi real run sim
+    ras robot run sim
 
 It will start the Gazebo Sim with XArm Robot, Rviz2, and other necessary components for the application to work out-of-the-box. You can now also interact with robot.
 
@@ -143,7 +143,7 @@ It will start the Gazebo Sim with XArm Robot, Rviz2, and other necessary compone
 
     ras_cli run_real
 
-This will send the behavior tree generated by sim app to real app, and real app will perform the trajectory. You can now see the robot arm performing same motion *pick and place* in the real simulation. Also, the real and simulation robot are synchronized to perform the same motion.
+This will send the behavior tree generated by sim app to robot app, and robot app will perform the trajectory. You can now see the robot arm performing same motion *pick and place* in the robot simulation. Also, the robot and simulation robot are synchronized to perform the same motion.
 
 
 This is all for the quick start guide. You can now explore more features and functionalities of RAS by going through the documentation.

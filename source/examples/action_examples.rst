@@ -60,21 +60,23 @@ The actions are defined as a dictionary with the keys as the action name and the
         - gripper: false
 
 
-5. Start the **sim** application by running the following command:
+5. Start the **server** application by running the following command:
 
 .. code-block:: bash
 
-    rdi sim dev
+    ras server dev
 
     ras_app
 
-6. To start the experiment, open the following URL in your browser:
+6. To start the experiment, open the terminal and use the following command:
 
-    `localhost:5173 <http://localhost:5173>`_
+.. code-block:: bash
 
-Then enter *5* in the **Experiment ID** field and click **LOAD EXPERIMENT**. After that click **START SIMULATION** to start the experiment.
+    ras_cli load_experiment 5
 
-7. This will start the robot and it will perform the actions defined in the yaml file.
+    ras_cli run_sim
+
+7. This will start the experiment described above robot, and it will perform the actions defined in the .yaml file.
 
 
 .. Example 2

@@ -1,64 +1,133 @@
 Installation
 ============
 
-RAS Docker is the main workspace where two applications, **sim** and **real**, can be worked with seamlessly. This document provides an overview of its setup and usage.
+RAS Docker is the main workspace where two applications, **robot** and **server**, can be worked with seamlessly. This document provides an overview of its setup and usage.
 
-Steps to install RAS
+.. note::
+   Currently, Ubuntu is the officially supported distro for RAS.
+
+Prequisites to use RAS
+----------------------
+
+Before using RAS, ensure that you have the following dependencies installed:
+
+1. **Vcstool** - A command-line tool for managing multiple repositories in ROS2 workspaces.
+
+   .. code-block:: bash
+
+      python3 -m pip install vcstool
+
+2. **Docker-CE** - The community edition of Docker for containerized application management and Nvidia Container Toolkit if the device has an Nvidia GPU.
+
+   - `Docker <https://docs.docker.com/engine/install/ubuntu/>`_
+   - `Nvidia Container Toolkit <https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html>`_
+
+3. **Argcomplete** - A Python package that provides tab completion for command-line programs.
+
+   .. code-block:: bash
+
+      sudo apt install python3-argcomplete
+
+4. **Git** - A version control system used for tracking changes in source code.
+
+   .. code-block:: bash
+
+      sudo apt install git
+
+Clone the Repository
 --------------------
 
-0. Prerequisites
+.. code-block:: bash
 
-Install the following dependencies:
+   git clone --recursive https://github.com/ras-ros2/ras_docker
 
-- `Docker <https://docs.docker.com/engine/install/ubuntu/>`_
+RAS Docker Interface (RAS)
+--------------------------
 
-- `Nvidia Cuda Toolkit <https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html>`_
+RAS Docker includes a command-line utility called **RDI** (RAS Docker Interface), implemented in the ``ras_docker`` package under the ``scripts`` directory.
 
-1. Clone the Repository
+Source the Environment File
+---------------------------
 
 .. code-block:: bash
 
-    git clone --recursive https://github.com/ras-ros2/ras_docker
+   source ./ras_docker/env.sh
 
-RAS Docker Interface (RDI)
+Check Available Commands
+------------------------
 
-RAS Docker includes a command-line utility called **RDI** (RAS Docker Interface), implemented in ``docker_interface.py`` under the ``scripts`` directory.
-
-2. Source the Environment File
-
-.. code-block:: bash
-
-    source ./ras_docker/env.sh
-
-3. Check Available Commands
+To see the available RDI commands, run:
 
 .. code-block:: bash
 
-    rdi -h
-
-To see the available RDI commands
+   ras -h
 
 Directory Structure
 -------------------
 
-`apps` Directory
-~~~~~~~~~~~~~~~~
-The `apps` directory houses the two applications, **sim** and **real**, which are Docker containers built using the Docker images located in the `context` directory. **sim app** is used for developing and testing experiments in the sim environment, and **real app** is used for testing the experiments in the real environment with real robot.
+- ``apps`` Directory
 
-`context` Directory
-~~~~~~~~~~~~~~~~~~~
-The `context` directory contains the Docker images used to build the applications:
+The ``apps`` directory houses the two applications, **server** and **robot**, which are Docker containers built using the Docker images located in the ``context`` directory.
 
-1. **Dockerfile.base**: Based on the `humble-desktop-full` image, it installs dependencies common to both applications (e.g., `python3-pip`).
+- ``context`` Directory
 
-2. **Dockerfile.sim**: Extends `Dockerfile.base` and adds dependencies specific to the **sim** application (e.g., `ignition-fortress`).
+The ``context`` directory contains the Docker images used to build the applications:
 
-3. **Dockerfile.real**: Extends `Dockerfile.base` and adds dependencies specific to the **real** application.
+1. **Dockerfile.base**: Based on the ``humble-desktop-full`` image, it installs dependencies common to both applications (e.g., ``python3-pip``).
+2. **Dockerfile.server**: Extends ``Dockerfile.base`` and adds dependencies specific to the **server** application (e.g., ``ignition-fortress``).
+3. **Dockerfile.robot**: Extends ``Dockerfile.base`` and adds dependencies specific to the **robot** application.
 
-4. To check App-Specific Commands
+Check App-Specific Commands
+---------------------------
+
+To see commands specific to an application (e.g., ``server``):
 
 .. code-block:: bash
 
-    rdi sim -h
+   ras server -h
 
-To see commands specific to an application (e.g., `sim`)
+Working with the Server Application
+-----------------------------------
+
+Initialize Server
+-----------------
+
+.. code-block:: bash
+
+   ras server init
+
+This creates a ``ras_server_app`` directory under the ``apps`` folder.
+
+Build the Docker Image for the Server App
+-----------------------------------------
+
+.. code-block:: bash
+
+   ras server build
+
+Build the ROS 2 Workspace
+-------------------------
+
+.. code-block:: bash
+
+   ras server build
+
+This builds the ``src`` folder inside the ``ros2_ws`` directory present in ``ras_server_app``.
+
+Run the Server Lab
+------------------
+
+.. code-block:: bash
+
+   ras server run
+
+This starts the container and executes the code defined in the ``run.sh`` file within ``ras_server_app``.
+
+Hack into the Container
+-----------------------
+
+.. code-block:: bash
+
+   ras server dev
+
+Login to the container, explore, and hack your way into the application.

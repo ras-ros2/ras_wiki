@@ -9,7 +9,7 @@ This is the quick start example to get started with the RAS. RAS is an open sour
 
     ras server init
 
-.. image:: ../_static/assets/rdi_sim_init.png
+.. image:: ../_static/assets/ras_server_init.png
     :alt: ras server Init
     :align: center
 
@@ -23,7 +23,7 @@ This is the quick start example to get started with the RAS. RAS is an open sour
 
     ras server build
 
-.. image:: ../_static/assets/rdi_sim_build.png
+.. image:: ../_static/assets/ras_server_build.png
     :alt: ras server Build
     :align: center
 
@@ -37,13 +37,13 @@ The above command will build the ros2 packages for the **server** application in
 
     ras server run
 
-.. image:: ../_static/assets/rdi_sim_run.png
+.. image:: ../_static/assets/ras_server_run.png
     :alt: ras server Run
     :align: center
 
 It will start the Gazebo Sim with XArm Robot, Rviz2, and other necessary components for the application to work out-of-the-box. You can now interact with robot.
 
-.. image:: ../_static/assets/ignition_rviz.png
+.. image:: ../_static/assets/gazebo_rviz.png
     :alt: Rviz
     :align: center
 

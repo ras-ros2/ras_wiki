@@ -1,0 +1,196 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Action Examples &mdash; ras_wiki  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=b3ba4146"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How to add new primitives" href="add_new_primitives.html" />
+    <link rel="prev" title="Quick Start" href="quick_start.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            ras_wiki
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../example.html">Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="quick_start.html">Quick Start</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Action Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-1">Example 1</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="add_new_primitives.html">How to add new primitives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_new_robots.html">How to add new robots</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contribution.html">Contributing</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ras_wiki</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../example.html">Examples</a></li>
+      <li class="breadcrumb-item active">Action Examples</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/ras-ros2/ras_wiki/blob/main/source/examples/action_examples.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="action-examples">
+<h1>Action Examples<a class="headerlink" href="#action-examples" title="Permalink to this heading"></a></h1>
+<p>This section demonstrates how to create a experiment yaml file using simple actions and use it with the RAS.</p>
+<p>In the <strong>config/experiments</strong> folder inside the <cite>ras_sim_lab</cite>, you can create a &lt;your_experiment_name&gt;.yaml file which can be used to define the actions for the robot to perform.</p>
+<section id="example-1">
+<h2>Example 1<a class="headerlink" href="#example-1" title="Permalink to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Create a new yaml file e.g. 5.yaml in the <strong>config/experiments</strong> folder inside the <cite>ras_sim_lab</cite>.</p></li>
+<li><p>Now define the poses for the robot. The poses are defined as a dictionary with the keys as the name of the pose and the values as the pose values. The pose values are defined as a dictionary with the keys as the x, y, z, roll, pitch and yaw values. See the example below and create a similar dictionary for the poses.:</p></li>
+</ol>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Poses</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">out1</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">x</span><span class="p">:</span><span class="w"> </span><span class="nv">0.2</span><span class="p p-Indicator">,</span><span class="nt"> y</span><span class="p">:</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="nt"> z</span><span class="p">:</span><span class="w"> </span><span class="nv">0.5</span><span class="p p-Indicator">,</span><span class="nt"> roll</span><span class="p">:</span><span class="w"> </span><span class="nv">3.14</span><span class="p p-Indicator">,</span><span class="nt"> pitch</span><span class="p">:</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="nt"> yaw</span><span class="p">:</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Next define the targets for the robot. The targets are defined as a list of actions that the robot should perform.</p></li>
+</ol>
+<p>Currently the following actions are supported:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The <strong>move2pose</strong> action is used to move the robot to a specific pose. The value of the action is the name of the pose that the robot should move to.</p></li>
+<li><p>The <strong>gripper</strong> action is used to open or close the gripper. The value of the action is a boolean value where <cite>true</cite> means the gripper should be closed and <cite>false</cite> means the gripper should be opened.</p></li>
+<li><p>The <strong>rotate</strong> action is used to rotate the end-effector. The value of the action is the angle in radians that the robot should rotate.</p></li>
+</ul>
+</div></blockquote>
+<p>The actions are defined as a dictionary with the keys as the action name and the values as the action values. See the example below:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">targets</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">move2pose</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">out1</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">gripper</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Here is the complete yaml file for the example:</p></li>
+</ol>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Poses</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">out1</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">x</span><span class="p">:</span><span class="w"> </span><span class="nv">0.2</span><span class="p p-Indicator">,</span><span class="nt"> y</span><span class="p">:</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="nt"> z</span><span class="p">:</span><span class="w"> </span><span class="nv">0.5</span><span class="p p-Indicator">,</span><span class="nt"> roll</span><span class="p">:</span><span class="w"> </span><span class="nv">3.14</span><span class="p p-Indicator">,</span><span class="nt"> pitch</span><span class="p">:</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="nt"> yaw</span><span class="p">:</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="nt">above1</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">x</span><span class="p">:</span><span class="w"> </span><span class="nv">0.2</span><span class="p p-Indicator">,</span><span class="nt"> y</span><span class="p">:</span><span class="w"> </span><span class="nv">-0.35</span><span class="p p-Indicator">,</span><span class="nt"> z</span><span class="p">:</span><span class="w"> </span><span class="nv">0.33</span><span class="p p-Indicator">,</span><span class="nt"> roll</span><span class="p">:</span><span class="w"> </span><span class="nv">3.14</span><span class="p p-Indicator">,</span><span class="nt"> pitch</span><span class="p">:</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="nt"> yaw</span><span class="p">:</span><span class="w"> </span><span class="nv">-1.575</span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="nt">in1</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">x</span><span class="p">:</span><span class="w"> </span><span class="nv">0.2</span><span class="p p-Indicator">,</span><span class="nt"> y</span><span class="p">:</span><span class="w"> </span><span class="nv">-0.35</span><span class="p p-Indicator">,</span><span class="nt"> z</span><span class="p">:</span><span class="w"> </span><span class="nv">0.25</span><span class="p p-Indicator">,</span><span class="nt"> roll</span><span class="p">:</span><span class="w"> </span><span class="nv">3.14</span><span class="p p-Indicator">,</span><span class="nt"> pitch</span><span class="p">:</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="nt"> yaw</span><span class="p">:</span><span class="w"> </span><span class="nv">-1.575</span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="nt">out2</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">x</span><span class="p">:</span><span class="w"> </span><span class="nv">0.2</span><span class="p p-Indicator">,</span><span class="nt"> y</span><span class="p">:</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="nt"> z</span><span class="p">:</span><span class="w"> </span><span class="nv">0.5</span><span class="p p-Indicator">,</span><span class="nt"> roll</span><span class="p">:</span><span class="w"> </span><span class="nv">3.14</span><span class="p p-Indicator">,</span><span class="nt"> pitch</span><span class="p">:</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="nt"> yaw</span><span class="p">:</span><span class="w"> </span><span class="nv">-1.575</span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="nt">above2</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">x</span><span class="p">:</span><span class="w"> </span><span class="nv">0.40</span><span class="p p-Indicator">,</span><span class="nt"> y</span><span class="p">:</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="nt"> z</span><span class="p">:</span><span class="w"> </span><span class="nv">0.37</span><span class="p p-Indicator">,</span><span class="nt"> roll</span><span class="p">:</span><span class="w"> </span><span class="nv">3.14</span><span class="p p-Indicator">,</span><span class="nt"> pitch</span><span class="p">:</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="nt"> yaw</span><span class="p">:</span><span class="w"> </span><span class="nv">-1.575</span><span class="p p-Indicator">}</span>
+<span class="w">    </span><span class="nt">in2</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">x</span><span class="p">:</span><span class="w"> </span><span class="nv">0.40</span><span class="p p-Indicator">,</span><span class="nt"> y</span><span class="p">:</span><span class="w"> </span><span class="nv">0.0</span><span class="p p-Indicator">,</span><span class="nt"> z</span><span class="p">:</span><span class="w"> </span><span class="nv">0.33</span><span class="p p-Indicator">,</span><span class="nt"> roll</span><span class="p">:</span><span class="w"> </span><span class="nv">3.14</span><span class="p p-Indicator">,</span><span class="nt"> pitch</span><span class="p">:</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="nt"> yaw</span><span class="p">:</span><span class="w"> </span><span class="nv">-1.575</span><span class="p p-Indicator">}</span>
+
+<span class="nt">targets</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">move2pose</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">out1</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">move2pose</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">above1</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">move2pose</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">in1</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">gripper</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">move2pose</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">above1</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">move2pose</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">out2</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">move2pose</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">above2</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">move2pose</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">in2</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">gripper</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Start the <strong>server</strong> application by running the following command:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ras<span class="w"> </span>server<span class="w"> </span>dev
+
+ras_app
+</pre></div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>To start the experiment, open the terminal and use the following command:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ras_cli<span class="w"> </span>load_experiment<span class="w"> </span><span class="m">5</span>
+
+ras_cli<span class="w"> </span>run_sim
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>This will start the experiment described above robot, and it will perform the actions defined in the .yaml file.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="quick_start.html" class="btn btn-neutral float-left" title="Quick Start" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="add_new_primitives.html" class="btn btn-neutral float-right" title="How to add new primitives" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, RAS.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
